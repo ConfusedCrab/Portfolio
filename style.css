@@ -386,6 +386,7 @@ body {
 .contact {
     padding: 6rem 0;
     background-color: var(--background);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .contact-content {

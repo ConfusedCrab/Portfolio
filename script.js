@@ -45,24 +45,24 @@ const animateOnScroll = () => {
 window.addEventListener('load', animateOnScroll);
 window.addEventListener('scroll', animateOnScroll);
 
-// Form submission
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+// // Form submission
+// const contactForm = document.querySelector('.contact-form');
+// if (contactForm) {
+//     contactForm.addEventListener('submit', (e) => {
+//         e.preventDefault();
         
-        // Get form data
-        const formData = new FormData(contactForm);
-        const data = Object.fromEntries(formData);
+//         // Get form data
+//         const formData = new FormData(contactForm);
+//         const data = Object.fromEntries(formData);
         
-        // Here you would typically send the data to a server
-        console.log('Form submitted:', data);
+//         // Here you would typically send the data to a server
+//         console.log('Form submitted:', data);
         
-        // Show success message
-        alert('Thank you for your message! I will get back to you soon.');
-        contactForm.reset();
-    });
-}
+//         // Show success message
+//         alert('Thank you for your message! I will get back to you soon.');
+//         contactForm.reset();
+//     });
+// }
 
 // Add animation delay to elements
 document.querySelectorAll('.animate-text').forEach((element, index) => {

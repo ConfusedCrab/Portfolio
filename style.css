@@ -312,6 +312,7 @@ body {
     height: 200px;
     object-fit: contain;
     margin: 10px;
+    width: 250px;
 
     /* border:0.1px solid black ; */
 }

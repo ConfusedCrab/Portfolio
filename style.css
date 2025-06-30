@@ -342,6 +342,19 @@ body {
     margin-right: 10px;
 }
 
+#toggleProjects.btn {
+    padding: 10px 20px;
+    background-color: #900707;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#toggleProjects.btn:hover {
+    background-color: #444;
+}
+
 /* Skills Section */
 .skills {
     padding: 6rem 0;

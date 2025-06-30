@@ -29,11 +29,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Scroll animations
 const animateOnScroll = () => {
     const elements = document.querySelectorAll('.animate-text');
-    
+
     elements.forEach(element => {
         const elementPosition = element.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
-        
+
         if (elementPosition < windowHeight - 100) {
             element.style.opacity = '1';
             element.style.transform = 'translateY(0)';
@@ -50,14 +50,14 @@ window.addEventListener('scroll', animateOnScroll);
 // if (contactForm) {
 //     contactForm.addEventListener('submit', (e) => {
 //         e.preventDefault();
-        
+
 //         // Get form data
 //         const formData = new FormData(contactForm);
 //         const data = Object.fromEntries(formData);
-        
+
 //         // Here you would typically send the data to a server
 //         console.log('Form submitted:', data);
-        
+
 //         // Show success message
 //         alert('Thank you for your message! I will get back to you soon.');
 //         contactForm.reset();
@@ -67,30 +67,44 @@ window.addEventListener('scroll', animateOnScroll);
 // Add animation delay to elements
 document.querySelectorAll('.animate-text').forEach((element, index) => {
     element.style.animationDelay = `${index * 0.2}s`;
-}); 
- 
+});
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const bars = document.querySelectorAll('.progress-bar-fill');
 
-            const animateBars = () => {
-                bars.forEach(bar => {
-                    const val = bar.dataset.value;
-                    bar.style.width = val + '%';
-                });
-            };
+document.addEventListener('DOMContentLoaded', () => {
+    const bars = document.querySelectorAll('.progress-bar-fill');
 
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateBars();
-                        observer.disconnect(); // only animate once
-                    }
-                });
-            }, { threshold: 0.5 });
+    const animateBars = () => {
+        bars.forEach(bar => {
+            const val = bar.dataset.value;
+            bar.style.width = val + '%';
+        });
+    };
 
-            const aboutSection = document.querySelector('#about');
-            if (aboutSection) {
-                observer.observe(aboutSection);
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateBars();
+                observer.disconnect(); // only animate once
             }
         });
+    }, { threshold: 0.5 });
+
+    const aboutSection = document.querySelector('#about');
+    if (aboutSection) {
+        observer.observe(aboutSection);
+    }
+});
+
+// see more toggle button
+const toggleBtn = document.getElementById('toggleProjects');
+const extraProjects = document.querySelector('.extra-projects');
+
+toggleBtn.addEventListener('click', () => {
+    if (extraProjects.style.display === 'none') {
+        extraProjects.style.display = 'block';
+        toggleBtn.textContent = 'See less';
+    } else {
+        extraProjects.style.display = 'none';
+        toggleBtn.textContent = 'See more';
+    }
+});
